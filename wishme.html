@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid al-Adha Mubarak | Premium Greetings</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS Custom Properties (Theme Management) --- */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #2D0B0B 0%, #4A1212 40%, #8C5311 100%);
+            --gold-primary: #F3C677;
+            --gold-secondary: #E0A949;
+            --text-light: #F7F4EF;
+            --text-muted: #D1C7BD;
+            --card-bg: rgba(45, 11, 11, 0.6);
+            --card-border: rgba(243, 198, 119, 0.2);
+            
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Poppins', sans-serif;
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+
+        /* --- Reset & Base Styles --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        /* Background Star Pattern Overlay */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(var(--gold-primary) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* --- Reusable Components & Utilities --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.875rem;
+            border: 1px solid var(--gold-primary);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--gold-primary);
+            color: #2D0B0B;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--gold-primary);
+            box-shadow: 0 0 15px rgba(243, 198, 119, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold-primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(243, 198, 119, 0.1);
+        }
+
+        /* --- Header / Decorative Lanterns --- */
+        .header-decor {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .lantern {
+            width: 60px;
+            height: auto;
+            animation: floatLantern 4s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 8px rgba(243, 198, 119, 0.3));
+        }
+
+        .lantern-right {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes floatLantern {
+            0% { transform: translateY(-5px) rotate(-1deg); }
+            100% { transform: translateY(10px) rotate(1deg); }
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            display: block;
+            color: var(--gold-primary);
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 500;
+            margin-top: 0.5rem;
+            text-shadow: 0 0 20px rgba(243, 198, 119, 0.4);
+        }
+
+        .hero-subtext {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* --- Silhouette Section Divider --- */
+        .silhouette-divider {
+            width: 100%;
+            line-height: 0;
+            position: relative;
+            margin-top: -100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .silhouette-divider svg {
+            width: 100%;
+            height: auto;
+            fill: #1E0707;
+        }
+
+        /* --- Interactive Card Generator Section --- */
+        .interactive-section {
+            background: #1E0707;
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .generator-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .generator-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Control Panel Form */
+        .generator-controls {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 2.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gold-primary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 10px rgba(243, 198, 119, 0.2);
+        }
+
+        /* Card Preview Display */
+        .card-preview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-canvas-wrapper {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 4 / 5;
+            background: linear-gradient(135deg, #3a0e0e 0%, #170404 100%);
+            border: 2px solid var(--gold-primary);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .card-decor-top {
+            width: 40px;
+            margin: 0 auto;
+            fill: var(--gold-primary);
+            opacity: 0.8;
+        }
+
+        .card-wish {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .card-message {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .card-user-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            border-top: 1px dashed rgba(243, 198, 119, 0.3);
+            padding-top: 1rem;
+            min-height: 45px;
+        }
+
+        .card-decor-bottom {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            line-height: 0;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .card-decor-bottom svg {
+            width: 100%;
+            fill: var(--gold-secondary);
+        }
+
+        .action-btn-group {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #110404;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(243, 198, 119, 0.1);
+            text-align: center;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icon {
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            font-size: 0.875rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .social-icon:hover {
+            color: var(--gold-primary);
+            text-shadow: 0 0 8px rgba(243, 198, 119, 0.5);
+        }
+
+        /* Utility helper hidden canvas for downloading */
+        #hiddenCanvas {
+            display: none;
+        }
+        /* --- Silhouette Section Divider --- */
+.silhouette-divider {
+    width: 100%;
+    line-height: 0;
+    position: relative;
+    margin-top: -100px;
+    
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Naya CSS jo image ko handle karega */
+.silhouette-divider img {
+    width: 100%;
+    height: 360%;
+    display: block;
+    position: relative;
+    bottom: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="header-decor">
+        <svg class="lantern" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="50" y1="0" x2="50" y2="60" stroke="#F3C677" stroke-width="2"/>
+            <path d="M30 60 H70 L80 90 H20 L30 60 Z" fill="#F3C677" opacity="0.8"/>
+            <path d="M20 90 C20 130 50 160 50 160 C50 160 80 130 80 90 H20 Z" fill="#E0A949"/>
+            <circle cx="50" cy="115" r="15" fill="#2D0B0B" opacity="0.6"/>
+            <path d="M50 160 V190" stroke="#F3C677" stroke-width="2"/>
+            <circle cx="50" cy="192" r="3" fill="#F3C677"/>
+        </svg>
+        <svg class="lantern lantern-right" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="50" y1="0" x2="50" y2="40" stroke="#F3C677" stroke-width="2"/>
+            <path d="M35 40 H65 L75 65 H25 L35 40 Z" fill="#F3C677" opacity="0.8"/>
+            <path d="M25 65 C25 105 50 135 50 135 C50 135 75 105 75 65 H25 Z" fill="#E0A949"/>
+            <circle cx="50" cy="90" r="12" fill="#2D0B0B" opacity="0.6"/>
+            <path d="M50 135 V175" stroke="#F3C677" stroke-width="2"/>
+            <circle cx="50" cy="177" r="3" fill="#F3C677"/>
+        </svg>
+    </div>
+
+    <main>
+        <section class="hero" id="home" style="">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Eid-Al-Adha
+                        <span>MUBARAK</span>
+                    </h1>
+                    <p class="hero-subtext">
+                        Allah subhanahu wa ta'ala has blessed us with the joy of eid al adha once again
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#generator" class="btn btn-primary">Personalize Greetings</a>
+                        <a href="#generator" class="btn btn-secondary">Explore Cards</a>
+                    </div>
+                </div>
+                <div class="silhouette-divider">
+    <img src="mosque.png" alt="Mosque Skyline Silhouette"></div>
+            </div>
+        </section>
+
+
+        <section class="interactive-section" id="generator">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Greeting Card Studio</h2>
+                    <p class="section-desc">Create custom bespoke aesthetic greetings to share instantly with your loved ones and celebrate the season of devotion.</p>
+                </div>
+
+                <div class="generator-grid">
+                    <div class="generator-controls">
+                        <div class="form-group">
+                            <label for="inputName">Name to greet</label>
+                            <input type="text" id="inputName" maxlength="25"
+                            placeholder="Enter name to personalize..."
+                            value="Name to greet">
+                        </div>
+                        <div class="form-group">
+                            <label for="selectMessage">Select Blessings Script</label>
+                            <select id="selectMessage">
+                                <option value="May your devotion and prayers be accepted. Wishing you divine joy and peace.">Traditional Blessing</option>
+                                <option value="May the spirit of sacrifice and faith illuminate your heart this festive season.">Spiritual Reflection</option>
+                                <option value="Wishing you and your family a beautiful day filled with laughter, love, and feasts.">Warm Family Wishes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectTheme">Card Color Accent</label>
+                            <select id="selectTheme">
+                                <option value="luxury-gold">Royal Gold Accent</option>
+                                <option value="emerald-glow">Sacred Emerald Accent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="card-preview-container">
+                        <div class="card-canvas-wrapper" id="cardCanvasElement">
+                            <svg class="card-decor-top" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50,0 L63,37 L100,50 L63,63 L50,100 L37,63 L0,50 L37,37 Z" fill="currentColor"/>
+                            </svg>
+                            
+                            <div>
+                                <h3 class="card-wish">Eid Mubarak</h3>
+                                <p class="card-message" id="cardMessageDest">May your devotion and prayers be accepted. Wishing you divine joy and peace.</p>
+                            </div>
+
+                            <div class="card-user-name" id="cardNameDest">Name
+                            to Greet</div>
+
+                            <div class="card-decor-bottom">
+                                <svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 120h400V60c-40 0-70-20-100-20s-60 20-100 20-70-20-100-20-60 20-100 20v60z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="action-btn-group">
+                            <button class="btn btn-primary" id="btnDownload">Download Image</button>
+                            <button class="btn btn-secondary" id="btnCopy">Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <canvas id="hiddenCanvas" width="800" height="1000"></canvas>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">May this blessed day bring peace, prosperity, and joy to the Global Ummah.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">WhatsApp</a>
+                <a href="#" class="social-icon">X / Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputName = document.getElementById('inputName');
+            const selectMessage = document.getElementById('selectMessage');
+            const selectTheme = document.getElementById('selectTheme');
+            
+            const cardNameDest = document.getElementById('cardNameDest');
+            const cardMessageDest = document.getElementById('cardMessageDest');
+            const cardCanvasElement = document.getElementById('cardCanvasElement');
+            const btnDownload = document.getElementById('btnDownload');
+            const btnCopy = document.getElementById('btnCopy');
+
+            // Synchronize control panel interactions to Live UI Node Card representation elements
+            function updateLiveCardPreview() {
+                cardNameDest.textContent = inputName.value.trim() || 'Your Name';
+                cardMessageDest.textContent = selectMessage.value;
+                
+                // Color Paradigm Theme Swap logic engine mapping configuration setup
+                if (selectTheme.value === 'emerald-glow') {
+                    cardCanvasElement.style.background = 'linear-gradient(135deg, #092614 0%, #030F08 100%)';
+                    cardCanvasElement.style.borderColor = '#64D28D';
+                    document.documentElement.style.setProperty('--gold-primary', '#64D28D');
+                } else {
+                    cardCanvasElement.style.background = 'linear-gradient(135deg, #3a0e0e 0%, #170404 100%)';
+                    cardCanvasElement.style.borderColor = '#F3C677';
+                    document.documentElement.style.setProperty('--gold-primary', '#F3C677');
+                }
+            }
+
+            inputName.addEventListener('input', updateLiveCardPreview);
+            selectMessage.addEventListener('change', updateLiveCardPreview);
+            selectTheme.addEventListener('change', updateLiveCardPreview);
+
+            // HTML5 High Definition Canvas Generator Architecture for Export processing operations
+            btnDownload.addEventListener('click', () => {
+                const canvas = document.getElementById('hiddenCanvas');
+                const ctx = canvas.getContext('2d');
+
+                // Canvas Theme Configurations runtime evaluation setup mapping profile
+                const isEmerald = selectTheme.value === 'emerald-glow';
+                const colorAccent = isEmerald ? '#64D28D' : '#F3C677';
+                
+                // Render Background Gradient state parameters safely
+                const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                if (isEmerald) {
+                    gradient.addColorStop(0, '#092614');
+                    gradient.addColorStop(1, '#030F08');
+                } else {
+                    gradient.addColorStop(0, '#3a0e0e');
+                    gradient.addColorStop(1, '#170404');
+                }
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Add decorative framing borders
+                ctx.strokeStyle = colorAccent;
+                ctx.lineWidth = 8;
+                ctx.strokeRect(30, 30, canvas.width - 60, canvas.height - 60);
+
+                // Draw Premium Top Geometric Crest Vector elements explicitly tracking alignments coordinates
+                ctx.fillStyle = colorAccent;
+                ctx.beginPath();
+                const cx = canvas.width / 2;
+                const cy = 180;
+                ctx.moveTo(cx, cy - 50);
+                ctx.lineTo(cx + 40, cy);
+                ctx.lineTo(cx, cy + 50);
+                ctx.lineTo(cx - 40, cy);
+                ctx.closePath();
+                ctx.fill();
+
+                // Typography Engine Initialization String Layout Blocks logic
+                ctx.textAlign = 'center';
+                
+                // Display Greeting Core Title Text Block String arrays
+                ctx.font = 'bold 54px Cinzel, Georgia, serif';
+                ctx.fillStyle = colorAccent;
+                ctx.fillText('EID MUBARAK', canvas.width / 2, 360);
+
+                // Word wrap configuration structure evaluation for message section string layers
+                ctx.font = '300 28px Poppins, Arial, sans-serif';
+                ctx.fillStyle = '#F7F4EF';
+                
+                const textMessage = selectMessage.value;
+                const words = textMessage.split(' ');
+                let line = '';
+                let y = 480;
+                const maxWidth = 650;
+                const lineHeight = 45;
+
+                for (let n = 0; n < words.length; n++) {
+                    let testLine = line + words[n] + ' ';
+                    let metrics = ctx.measureText(testLine);
+                    if (metrics.width > maxWidth && n > 0) {
+                        ctx.fillText(line, canvas.width / 2, y);
+                        line = words[n] + ' ';
+                        y += lineHeight;
+                    } else {
+                        line = testLine;
+                    }
+                }
+                ctx.fillText(line, canvas.width / 2, y);
+
+                // Render separation line boundary element dynamically based on message lengths profile
+                y += 60;
+                ctx.strokeStyle = colorAccent;
+                ctx.lineWidth = 1;
+                ctx.setLineDash([5, 5]);
+                ctx.beginPath();
+                ctx.moveTo(150, y);
+                ctx.lineTo(canvas.width - 150, y);
+                ctx.stroke();
+                ctx.setLineDash([]); // Reset line dash state parameters cleanly
+
+                // Render User Customized Name processing layer mapping dynamically
+                y += 70;
+                ctx.font = 'bold 42px Cinzel, Georgia, serif';
+                ctx.fillStyle = '#F7F4EF';
+                const finalName = inputName.value.trim() || 'Your Name';
+                ctx.fillText(finalName, canvas.width / 2, y);
+
+                // Render Architectural Silhouette bottom graphics asset components arrays
+                ctx.fillStyle = isEmerald ? 'rgba(100, 210, 141, 0.05)' : 'rgba(243, 198, 119, 0.05)';
+                ctx.beginPath();
+                ctx.moveTo(30, canvas.height - 30);
+                ctx.lineTo(canvas.width - 30, canvas.height - 30);
+                ctx.lineTo(canvas.width - 30, canvas.height - 250);
+                ctx.bezierCurveTo(canvas.width - 200, canvas.height - 300, 200, canvas.height - 150, 30, canvas.height - 250);
+                ctx.closePath();
+                ctx.fill();
+
+                // Trigger Virtual Download stream Pipeline mapping standard target download blocks anchor protocol
+                const imageURI = canvas.toDataURL('image/jpeg', 0.9);
+                const downloadAnchorElement = document.createElement('a');
+                downloadAnchorElement.download = `Eid_Al_Adha_${finalName.replace(/\s+/g, '_')}.jpg`;
+                downloadAnchorElement.href = imageURI;
+                document.body.appendChild(downloadAnchorElement);
+                downloadAnchorElement.click();
+                document.body.removeChild(downloadAnchorElement);
+            });
+
+            // Modern Application Copy Link Simulation notification processing event layer UI
+            btnCopy.addEventListener('click', () => {
+                const dummyUrl = window.location.href + '?wish=' + encodeURIComponent(inputName.value.trim());
+                navigator.clipboard.writeText(dummyUrl).then(() => {
+                    const originalText = btnCopy.textContent;
+                    btnCopy.textContent = 'Copied Link!';
+                    btnCopy.style.borderColor = '#64D28D';
+                    setTimeout(() => {
+                        btnCopy.textContent = originalText;
+                        btnCopy.style.borderColor = 'var(--gold-primary)';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed operational protocol copy pipeline transaction execution: ', err);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
